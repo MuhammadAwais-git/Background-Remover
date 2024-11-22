@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_drawer"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:padding="4dp"
+            android:src="@drawable/drawer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_removeimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:gravity="center"
+            android:text="Remove Image \n Background"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_drawer" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_dotedbroswer"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/doted_border"
+            android:elevation="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/txt_removeimg"
+            app:layout_constraintStart_toStartOf="@+id/txt_removeimg"
+            app:layout_constraintTop_toBottomOf="@+id/txt_removeimg">
+
+            <ImageView
+                android:id="@+id/img_frombroswer"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/add_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_frombroswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="Browse on your \nDevice"
+                android:textAllCaps="false"
+                android:textColor="#5B5BB2"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/img_frombroswer"
+                app:layout_constraintStart_toStartOf="@+id/img_frombroswer"
+                app:layout_constraintTop_toBottomOf="@+id/img_frombroswer" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/txt_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="15dp"
+            android:text="Automatically and \n        Free"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/constraint_dotedbroswer"
+            app:layout_constraintStart_toStartOf="@+id/constraint_dotedbroswer"
+            app:layout_constraintTop_toBottomOf="@+id/constraint_dotedbroswer" />
+
+        <TextView
+            android:id="@+id/txt_100"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="-8dp"
+            android:background="@drawable/yellow_image"
+            android:gravity="center"
+            android:text="100% "
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/txt_free"
+            app:layout_constraintTop_toTopOf="@+id/txt_free" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_imgfromcam"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/appBlue"
+            android:gravity="center"
+            android:text="Open Camera"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:cornerRadius="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_free" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="170dp"
+            android:elevation="5dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_imgfromgallery"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="29dp"
+            android:backgroundTint="@color/appBlue"
+            android:gravity="center"
+            android:text="From Gallery"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:cornerRadius="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_imgfromcam" />
+
+        <WebView
+            android:id="@+id/bgWebView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:elevation="5dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_noimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="No Image? Try One Of These"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_imgfromcam" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_testingimages"
+            android:layout_width="265dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:padding="2dp"
+            app:layout_constraintEnd_toEndOf="@+id/txt_noimg"
+            app:layout_constraintStart_toStartOf="@+id/txt_noimg"
+            app:layout_constraintTop_toBottomOf="@+id/txt_noimg">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Card_testimg1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/img_testimg1"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/try_img1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_container"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:elevation="5dp"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shimmer_duration="1500">
+
+                    <ImageView
+                        android:id="@+id/img_testimg1_test"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:background="@color/background_shimmer"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bg_load_image"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Card_testimg2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-20dp"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/Card_testimg1"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/img_testimg2"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/try_img2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_container_1"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:elevation="5dp"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shimmer_duration="1500">
+
+                    <ImageView
+                        android:id="@+id/img_testimg2_test"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:background="@color/background_shimmer"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bg_load_image"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Card_testimg3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-20dp"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/Card_testimg2"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/img_testimg3"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/try_img3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Card_testimg4"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="-20dp"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/Card_testimg3"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/img_testimg4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/try_img4" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="230dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/drawer_bg"
+        android:fitsSystemWindows="true">
+
+        <include
+            android:id="@+id/drawer"
+            layout="@layout/nav_header" />
+    </com.google.android.material.navigation.NavigationView>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

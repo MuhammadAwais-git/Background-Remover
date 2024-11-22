@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RemovedResultActivity">
+
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="@color/appBlue"
+        android:gravity="center"
+        android:text="save"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:cornerRadius="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_removeimg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60sp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="bg Removed"
+        android:textAllCaps="false"
+        android:textColor="@color/appBlue"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back" />
+
+    <View
+        android:id="@+id/removeimg_view"
+        android:layout_width="95dp"
+        android:layout_height="1dp"
+        android:background="@color/appBlue"
+        app:layout_constraintEnd_toEndOf="@+id/txt_removeimg"
+        app:layout_constraintStart_toStartOf="@+id/txt_removeimg"
+        app:layout_constraintTop_toBottomOf="@+id/txt_removeimg" />
+
+    <TextView
+        android:id="@+id/txt_Origional"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+        android:layout_marginEnd="60dp"
+        android:gravity="center"
+        android:text="Original"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back" />
+
+    <View
+        android:id="@+id/Origional_view"
+        android:layout_width="60dp"
+        android:layout_height="1dp"
+        android:background="@color/appBlue"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/txt_Origional"
+        app:layout_constraintStart_toStartOf="@+id/txt_Origional"
+        app:layout_constraintTop_toBottomOf="@+id/txt_Origional" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/centerLt"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/removeimg_view">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shimmer_duration="1800">
+
+            <!--          <LinearLayout
+                android:id="@+id/constraint_removeimage1"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/removeimg_view">-->
+
+            <ImageView
+                android:id="@+id/img_removed1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_shimmer"
+                android:visibility="visible" />
+
+            <!--      </LinearLayout>-->
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <LinearLayout
+            android:id="@+id/constraint_removeimage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="@+id/shimmer_view_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_removed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_ManualEditing"
+            android:layout_width="130dp"
+            android:layout_height="52dp"
+            android:gravity="center"
+            android:layout_margin="25dp"
+            android:backgroundTint="@color/appBlue"
+            android:text="Manual Eraser"
+            app:cornerRadius="20sp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/centerLt"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_background"
+        android:layout_width="130dp"
+        android:layout_height="52dp"
+        android:gravity="center"
+        android:layout_margin="25dp"
+        android:backgroundTint="@color/appBlue"
+        android:text="Backgrounds"
+        app:cornerRadius="20sp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/centerLt"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
